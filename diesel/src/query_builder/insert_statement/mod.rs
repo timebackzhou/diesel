@@ -46,7 +46,6 @@ impl<T, Op> IncompleteInsertStatement<T, Op> {
     /// Inserts `DEFAULT VALUES` into the targeted table.
     ///
     /// ```rust
-    /// # #[macro_use] extern crate diesel;
     /// # include!("../../doctest_setup.rs");
     /// #
     /// # table! {
@@ -284,7 +283,6 @@ impl<T, U, Op> InsertStatement<T, U, Op> {
     /// ### Inserting records:
     ///
     /// ```rust
-    /// # #[macro_use] extern crate diesel;
     /// # include!("../../doctest_setup.rs");
     /// #
     /// # #[cfg(feature = "postgres")]
