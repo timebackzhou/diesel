@@ -232,7 +232,7 @@ pub fn derive_identifiable(input: TokenStream) -> TokenStream {
 /// ## Optional field attributes
 ///
 /// * `#[column_name = "some_table_name"]`, overrides the column the current
-/// field maps to to `some_table_name`. By default the field name is used
+/// field maps to `some_table_name`. By default the field name is used
 /// as column name
 /// * `#[diesel(embed)]`, specifies that the current field maps not only
 /// to single database field, but is a struct that implements `Insertable`
@@ -245,7 +245,7 @@ pub fn derive_insertable(input: TokenStream) -> TokenStream {
 ///
 /// This derive can be used for structs with no type parameters,
 /// which are not aggregate, as well as for struct which are
-/// `NonAggregate` if all type parameters arse `NonAggregate`
+/// `NonAggregate` if all type parameters are `NonAggregate`.
 #[proc_macro_derive(NonAggregate)]
 pub fn derive_non_aggregate(input: TokenStream) -> TokenStream {
     expand_proc_macro(input, non_aggregate::derive)
@@ -341,7 +341,7 @@ pub fn derive_queryable_by_name(input: TokenStream) -> TokenStream {
 
 /// Implement necessary traits for adding a new sql type
 ///
-/// This trait implements all necessary traits  to define a
+/// This trait implements all necessary traits to define a
 /// new sql type. This is useful for adding support for unsupported
 /// or custom types on sql side. The sql type will be usable for
 /// all backends you specified via the attributes listed below.
